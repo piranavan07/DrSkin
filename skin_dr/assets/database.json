@@ -1,0 +1,34 @@
+[
+    {   
+        "title": "acne/rosacea",
+        "description":"Acne, also known as acne vulgaris, is a long-term skin disease that occurs when hair follicles are clogged with dead skin cells and oil from the skin.[10] It is characterized by blackheads or whiteheads, pimples, oily skin, and possible scarring.",
+        "symptoms": "Scars and Pigmentation",
+        "causes": "Risk factors for the development of acne, other than genetics, have not been conclusively identified. Possible secondary contributors include hormones, infections, diet and stress",
+        "treatement-1": "https://www.medicinenet.com/acne/article.htm#what_is_acne",
+        "treatement-2": "https://www.aad.org/public/diseases/acne-and-rosacea/rosacea/how-to-treat-the-redness"
+    },
+    {
+        "title": "actinic_keratosos",
+        "description": "Actinic keratosis (AK) is a pre-cancerous[2] area of thick, scaly, or crusty skin.[3][4] These growths are more common in fair-skinned people and those who are frequently in the sun.[5] They are believed to form when skin gets damaged by ultraviolet (UV) radiation from the sun or indoor tanning beds, usually over the course of decades.",
+        "symptoms": "Actinic keratoses (AKs) most commonly present as a white, scaly plaque of variable thickness with surrounding redness",
+        "causes": "The most important cause of AK formation is solar radiation, through a variety of mechanisms. ",
+        "treatement-1": "https://www.skincancer.org/skin-cancer-information/actinic-keratosis/actinic-keratosis-treatment-options",
+        "treatement-2": "https://www.skincancer.org/skin-cancer-information/basal-cell-carcinoma/bcc-treatment-options"
+    },
+    {
+        "title":"eczema",
+        "description": "Dermatitis, also known as eczema, is a group of diseases that results in inflammation of the skin.[1] These diseases are characterized by itchiness, red skin and a rash.[1] In cases of short duration, there may be small blisters, while in long-term cases the skin may become thickened.[1] The area of skin involved can vary from small to the entire body." ,
+        "symptoms": "The symptoms of atopic dermatitis vary from person to person, the most common symptoms are dry, itchy, red skin. Typical affected skin areas include the folds of the arms, the back of the knees, wrists, face and hands. Perioral dermatitis refers to a red bumpy rash around the mouth.",
+        "causes": "The cause of dermatitis is unknown but is presumed to be a combination of genetic and environmental factors.",
+        "treatement-1": "https://www.medicalnewstoday.com/articles/14417.php",
+        "treatement-2": "https://nationaleczema.org/eczema/treatment/"
+    },
+    {
+        "title":"melanma/nevi/moles",
+        "description": "Melanoma, also known as malignant melanoma, is a type of cancer that develops from the pigment-containing cells known as melanocytes.[1] Melanomas typically occur in the skin, but may rarely occur in the mouth, intestines, or eye." ,
+        "symptoms": "Early signs of melanoma are changes to the shape or color of existing moles or, in the case of nodular melanoma, the appearance of a new lump anywhere on the skin. At later stages, the mole may itch, ulcerate or bleed. Early signs of melanoma are summarized by the mnemonic ABCDEF Asymmetry Borders (irregular with edges and corners) Color (variegated) Diameter (greater than 6 mm (0.24 in), about the size of a pencil eraser) Evolving over time Funny looking",
+        "causes": "Melanomas are usually caused by DNA damage resulting from exposure to ultraviolet light from the sun. Genetics also plays a role.",
+        "treatement-1": "https://www.cancer.org/cancer/melanoma-skin-cancer/treating/by-stage.html",
+        "treatement-2": "https://www.melanoma.org/understand-melanoma/melanoma-treatment"
+    }
+]
