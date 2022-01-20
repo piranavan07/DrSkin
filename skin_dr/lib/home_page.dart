@@ -2,6 +2,7 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:skin_dr/intro_page.dart';
 
 import 'menu.dart';
 
@@ -17,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     Future.delayed(const Duration(seconds: 5), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const menu()));
+          context, MaterialPageRoute(builder: (context) => IntroPage()));
     });
     super.initState();
   }
@@ -25,23 +26,29 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue[200],
       body: Container(
         alignment: Alignment.center,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-              height: 300,
-              width: 300,
-              child: Lottie.asset('assets/spash_bg.json'),
-              // Lottie.network('https://assets5.lottiefiles.com/packages/lf20_yubjrwy7/doctors.json'),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
+            // SizedBox(
+            //   height: 300,
+            //   width: 300,
+            //   child: Lottie.asset('assets/spash_bg.json'),
+            //   // Lottie.network('https://assets5.lottiefiles.com/packages/lf20_yubjrwy7/doctors.json'),
+            // ),
+            // const SizedBox(
+            //   height: 20,
+            // ),
             const Text("Skin Dr",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                style: TextStyle(
+                    fontSize: 50,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                ),
+            ),
           ],
         ),
       ),

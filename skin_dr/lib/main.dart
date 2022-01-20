@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skin_dr/intro_page.dart';
 import 'package:skin_dr/menu.dart';
 
 import 'home_page.dart';
@@ -19,8 +20,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: HomePage(),
+      // const HomePage(),
       // home: menu(),
+
     );
   }
 }

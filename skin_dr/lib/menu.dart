@@ -3,6 +3,7 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:skin_dr/search_data.dart';
 
 class menu extends StatefulWidget {
   const menu({Key? key}) : super(key: key);
@@ -13,10 +14,13 @@ class menu extends StatefulWidget {
 
 class _menuState extends State<menu> {
   List info = [];
+  List data_info = [];
+
+
 
   _initData() {
     DefaultAssetBundle.of(context)
-        .loadString("assets/database.json")
+        .loadString("assets/db/database.json")
         .then((value) => {info = json.decode(value)});
   }
 
@@ -200,8 +204,8 @@ class _menuState extends State<menu> {
               ),
             ),
             Row(
-              children: const [
-                Text(
+              children: [
+                const Text(
                   "Our database",
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -209,6 +213,17 @@ class _menuState extends State<menu> {
                     fontWeight: FontWeight.w500,
                     color: Color(0xFF302f51),
                   ),
+                ),
+                SizedBox(width: 25,),
+                // Expanded(child: SizedBox(width: 30,)),
+                IconButton(
+                  icon:const Icon(
+                    Icons.search,
+                    size: 30,color: Colors.blue,),
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                          context, MaterialPageRoute(builder: (context) => const SearchData()));
+                      },
                 )
               ],
             ),
@@ -231,7 +246,8 @@ class _menuState extends State<menu> {
                             borderRadius: BorderRadius.circular(15),
                             image: const DecorationImage(
                                 alignment: Alignment.centerLeft,
-                                image: AssetImage("assets/skin.gif")),
+                                image: AssetImage("assets/skin.gif")
+                            ),
                             boxShadow: const [
                               BoxShadow(
                                 blurRadius: 3,
