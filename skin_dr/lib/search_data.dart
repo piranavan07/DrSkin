@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:lottie/lottie.dart';
 
 class SearchData extends StatefulWidget {
   const SearchData({Key? key}) : super(key: key);
@@ -45,7 +44,23 @@ class _SearchDataState extends State<SearchData> {
                 : Container()
           ],
         ),
-      )
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'My Reports',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'me',
+          ),
+        ],
+      ),
     );
   }
 

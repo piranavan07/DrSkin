@@ -4,6 +4,7 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:skin_dr/search_data.dart';
+import 'package:skin_dr/models/diseases.dart';
 
 class menu extends StatefulWidget {
   const menu({Key? key}) : super(key: key);
@@ -13,14 +14,12 @@ class menu extends StatefulWidget {
 }
 
 class _menuState extends State<menu> {
+  List<Diseases> diseases = [];
+
   List info = [];
-  List data_info = [];
-
-
-
   _initData() {
     DefaultAssetBundle.of(context)
-        .loadString("assets/db/database.json")
+        .loadString("assets/db/database_cp.json")
         .then((value) => {info = json.decode(value)});
   }
 
@@ -173,33 +172,7 @@ class _menuState extends State<menu> {
                         Lottie.asset('assets/reported.json'),
                       ],
                     ),
-                    // decoration: BoxDecoration(
-                    //   // color: Colors.redAccent.withOpacity(0.2),
-                    //   // borderRadius: BorderRadius.circular(10),
-                    //   // image: const DecorationImage(
-                    //   //   image: AssetImage(""),
-                    //   // fit: BoxFit.fill,
-                    //   // ),
-                    // ),
                   ),
-                  // Container(
-                  //   width: double.maxFinite,
-                  //   height: 100,
-                  //   color: Colors.redAccent.withOpacity(0.2),
-                  //   margin: const EdgeInsets.only(right: 150, top: 50),
-                  //   child: Column(
-                  //     children: [
-                  //       const Text(
-                  //         "You can create new case.",
-                  //         style: TextStyle(
-                  //           fontSize: 15,
-                  //           fontWeight: FontWeight.bold,
-                  //           color: Color(0xff6588f4),
-                  //         ),
-                  //       ),
-                  //     ],
-                  //   ),
-                  // ),
                 ],
               ),
             ),
@@ -214,28 +187,28 @@ class _menuState extends State<menu> {
                     color: Color(0xFF302f51),
                   ),
                 ),
-                SizedBox(width: 25,),
+                const SizedBox(width: 25,),
                 // Expanded(child: SizedBox(width: 30,)),
                 IconButton(
                   icon:const Icon(
                     Icons.search,
                     size: 30,color: Colors.blue,),
                     onPressed: () {
-                      Navigator.pushReplacement(
+                      Navigator.push(
                           context, MaterialPageRoute(builder: (context) => const SearchData()));
                       },
                 )
               ],
             ),
+
             Expanded(
               child: ListView.builder(
-                  itemCount: info.length,
-                  itemBuilder: (_, i) {
+                      itemCount: info.length,
+                      itemBuilder: (_, i) {
                     return Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Container(
-                          // child: Lottie.asset('assets/skin.json'),
                           width: MediaQuery.of(context).size.width,
                           margin: const EdgeInsets.all(10),
                           alignment: Alignment.centerLeft,
@@ -246,8 +219,7 @@ class _menuState extends State<menu> {
                             borderRadius: BorderRadius.circular(15),
                             image: const DecorationImage(
                                 alignment: Alignment.centerLeft,
-                                image: AssetImage("assets/skin.gif")
-                            ),
+                                image: AssetImage("assets/skin.gif")),
                             boxShadow: const [
                               BoxShadow(
                                 blurRadius: 3,
@@ -305,4 +277,6 @@ class _menuState extends State<menu> {
       ),
     );
   }
+
+
 }

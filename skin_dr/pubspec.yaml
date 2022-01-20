@@ -36,6 +36,9 @@ dependencies:
   introduction_screen: ^2.1.0
   cupertino_icons: ^1.0.2
   lottie: ^1.2.1
+  image_picker: ^0.8.4+4
+  meta: ^1.1.1
+  tflite:
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +67,7 @@ flutter:
     - assets/
     - assets/db/
     - assets/db/database.json
+    - assets/db/database_cp.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
