@@ -17,6 +17,7 @@ class _PredictPageState extends State<PredictPage> {
   late Future<File> imageFile;
   File? _image;
   String result = '';
+  String confid = '';
   ImagePicker? imagePicker;
 
   getPhotoFromGallery() async{
@@ -66,12 +67,15 @@ class _PredictPageState extends State<PredictPage> {
     print(recognition!.length.toString());
     setState(() {
       result = '';
+      confid = '';
     });
     recognition.forEach((element) {
       setState(() {
         print(element.toString());
         // can put if condition to show
-        result += element['label'] + '/n/n';
+        result += element['label'];
+        confid += (element['confidence'] * 100).toString();
+        print(result + ' - ' + confid+'%');
       });
     });
 
@@ -79,6 +83,14 @@ class _PredictPageState extends State<PredictPage> {
 
   @override
   Widget build(BuildContext context) {
+    if (result == '0 mel'){
+      result = 'Melanoma (mel)';
+    }
+    else if (result == '1 bkl') {
+      result = 'Benign keratosis-like lesions (bkl)';
+    } else{
+      result = 'Melanocytic nevi (nv)';
+    }
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.white,elevation: 0),
       backgroundColor: const Color(0xFFfbfcff),
@@ -88,6 +100,7 @@ class _PredictPageState extends State<PredictPage> {
            const SizedBox(
               width: 100.0,
             ),
+
             Container(
               margin: const EdgeInsets.only(top: 20.0),
               child: Stack(
@@ -102,14 +115,14 @@ class _PredictPageState extends State<PredictPage> {
                       child: _image!=null
                       ?
                       Image.file(_image!,
-                        height: 100.0,
-                        width: 400.0,
+                        height: 300.0,
+                        width: 300.0,
                         fit: BoxFit.cover,
                       )
                           :
                           Container(
-                            height: 150.0,
-                            width: 150.0,
+                            height: 100.0,
+                            width: 100.0,
                             child: Icon(
                               Icons.camera_alt_rounded,
                               color: Colors.blue,
@@ -120,7 +133,7 @@ class _PredictPageState extends State<PredictPage> {
                 ],
               ),
             ),
-            const SizedBox(height: 160.0,),
+            const SizedBox(height: 50.0,),
             Container(
               margin: const EdgeInsets.only(top: 20.0,),
               child: Text(
