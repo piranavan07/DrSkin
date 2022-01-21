@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:skin_dr/predict_page.dart';
@@ -59,6 +60,7 @@ class _menuState extends State<menu> {
                   Icons.chat,
                   size: 30,
                   color: Color(0xFF3b3c5c),
+
                 )
               ],
             ),
@@ -106,17 +108,25 @@ class _menuState extends State<menu> {
                   left: 20,
                   top: 25,
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text(
-                      "Step 1 0f 3",
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      "Step 1 0f 3\n\n\nTap camera icon \nin the bottom",
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                         color: Color(0xfff4f5fd),
                       ),
                     ),
+                    // const Text('Tap camera icon \nin the bottom',
+                    //   style: TextStyle(
+                    //     fontSize: 16,
+                    //     fontWeight: FontWeight.w500,
+                    //     color: Color(0xfff4f5fd),
+                    //   ),
+                    // ),
+                    Lottie.asset('assets/spash_bg.json'),
                   ],
                 ),
               ),

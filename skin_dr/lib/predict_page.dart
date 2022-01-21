@@ -72,7 +72,7 @@ class _PredictPageState extends State<PredictPage> {
     recognition.forEach((element) {
       setState(() {
         print(element.toString());
-        // can put if condition to show
+        // can put if condition to show double.parse('1.1'); for confid
         result += element['label'];
         confid += (element['confidence'] * 100).toString();
         print(result + ' - ' + confid+'%');
@@ -88,7 +88,7 @@ class _PredictPageState extends State<PredictPage> {
     }
     else if (result == '1 bkl') {
       result = 'Benign keratosis-like lesions (bkl)';
-    } else{
+    }else if (result == '2 nv') {
       result = 'Melanocytic nevi (nv)';
     }
     return Scaffold(
