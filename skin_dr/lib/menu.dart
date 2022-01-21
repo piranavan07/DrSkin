@@ -1,8 +1,8 @@
 import 'dart:convert';
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:skin_dr/predict_page.dart';
 import 'package:skin_dr/search_data.dart';
 import 'package:skin_dr/models/diseases.dart';
 
@@ -15,6 +15,7 @@ class menu extends StatefulWidget {
 
 class _menuState extends State<menu> {
   List<Diseases> diseases = [];
+  int _selectedIndex = 0;
 
   List info = [];
   _initData() {
@@ -257,10 +258,14 @@ class _menuState extends State<menu> {
         onPressed: () {
           print('Open camera .. ');
           print(info);
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => const PredictPage()));
+
         },
       ),
+
       bottomNavigationBar: BottomNavigationBar(
-        items: const [
+        items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
@@ -274,8 +279,16 @@ class _menuState extends State<menu> {
             label: 'me',
           ),
         ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
       ),
+
     );
+  }
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 
 

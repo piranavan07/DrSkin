@@ -1,10 +1,6 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:skin_dr/intro_page.dart';
 
-import 'menu.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -32,7 +28,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: const [
             // SizedBox(
             //   height: 300,
             //   width: 300,
@@ -42,7 +38,7 @@ class _HomePageState extends State<HomePage> {
             // const SizedBox(
             //   height: 20,
             // ),
-            const Text("Skin Dr",
+            Text("Skin Dr",
                 style: TextStyle(
                     fontSize: 50,
                     fontWeight: FontWeight.bold,

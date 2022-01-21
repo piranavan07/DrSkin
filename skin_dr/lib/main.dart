@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:skin_dr/intro_page.dart';
-import 'package:skin_dr/menu.dart';
-
 import 'home_page.dart';
 
 void main() {
@@ -20,8 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
-      // const HomePage(),
+      home: const HomePage(),
       // home: menu(),
 
     );

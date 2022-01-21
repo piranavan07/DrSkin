@@ -4,7 +4,7 @@ import 'package:lottie/lottie.dart';
 
 import 'menu.dart';
 
-const pageDecoration = const PageDecoration(
+const pageDecoration =  PageDecoration(
   titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
   bodyTextStyle: TextStyle(fontSize: 19.0),
   descriptionPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
@@ -22,21 +22,21 @@ class IntroPage extends StatelessWidget {
         ),
         title: 'Say No To Skin Diseases',
         body: 'Check your skin on smartphone and get instant results with in a minite',
-        footer: Text('ICE Batch 2021 @SLTC '),
+        footer: const Text('ICE Batch 2021 @SLTC '),
         decoration: pageDecoration,
       ),
       PageViewModel(
           image: Lottie.asset('assets/robot-ai-help.json'),
           title: 'Machine Leaning',
           body: 'Show your photo to the Machine learning model. The system will analyze it and send you the result.',
-          footer: Text('ICE Batch 2021 @SLTC '),
+          footer: const Text('ICE Batch 2021 @SLTC '),
           decoration: pageDecoration,
       ),
       PageViewModel(
           image: Lottie.asset('assets/spash_bg.json'),
           title: 'Skin Dr',
           body: 'Your Personal ML Dermatologist',
-          footer: Text('Batch 2021 ICE @SLTC '),
+          footer: const Text('Batch 2021 ICE @SLTC '),
           decoration: pageDecoration,
       ),
     ];
